@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --color-gold: #d4af37;
+  --color-gold-hover: #f1cd57;
+  --color-dark: #0a0a0a;
+  --color-darker: #050505;
+  --color-dark-gray: #1a1a1a;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-dark);
+  color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+.text-gold {
+  color: var(--color-gold);
+}
+
+.bg-gold {
+  background-color: var(--color-gold);
+}
+
+.hover\:bg-gold-hover:hover {
+  background-color: var(--color-gold-hover);
+}
+
+.bg-dark {
+  background-color: var(--color-dark);
+}
+
+.bg-darker {
+  background-color: var(--color-darker);
+}
+
+/* Smooth scroll for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-darker);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-hover);
+}
+
+/* Liquid Shader Animation */
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.liquid-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  background: var(--color-darker);
+}
+
+.liquid-blob-1 {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, rgba(0,0,0,0) 70%);
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  animation: blob 20s infinite alternate;
+  filter: blur(60px);
+}
+
+.liquid-blob-2 {
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, rgba(0,0,0,0) 70%);
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  animation: blob 25s infinite alternate-reverse;
+  filter: blur(80px);
+}

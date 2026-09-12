@@ -1,0 +1,5 @@
+# This is a Node.js/React project, so the primary dependencies are managed via package.json.
+# This file is included for compatibility if your deployment platform expects it.
+
+node>=18.0.0
+npm>=9.0.0
